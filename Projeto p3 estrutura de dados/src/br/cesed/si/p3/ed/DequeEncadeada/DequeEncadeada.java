@@ -2,11 +2,14 @@ package br.cesed.si.p3.ed.DequeEncadeada;
 
 import br.cesed.si.p3.ed.No.No;
 
+/*
+ * Concatena dois deques
+ */
 public class DequeEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
-	
-	public void concatena(DequeEncadeada deque2){
+
+	public void concatena(DequeEncadeada deque2) {
 		int tamanho = deque2.getPos();
 		No aux = deque2.getInicio();
 		for (int i = 0; i < tamanho; i++) {
@@ -14,14 +17,24 @@ public class DequeEncadeada {
 			aux = aux.getProx();
 		}
 	}
-	
-	public Object getElementoInicial(){
+
+	/*
+	 * Pega o elemento inicial do deque
+	 */
+	public Object getElementoInicial() {
 		return inicio.getItem();
 	}
-	public Object getElementoFinal(){
+
+	/*
+	 * Pega o ultimo elemento do deque
+	 */
+	public Object getElementoFinal() {
 		return fim.getItem();
 	}
-	
+
+	/*
+	 * Adiciona elemento no inicio
+	 */
 	public void adicionarInicio(Object item) {
 		No novo = new No(item);
 		if (inicio == null) {
@@ -35,6 +48,9 @@ public class DequeEncadeada {
 		pos++;
 	}
 
+	/*
+	 * Remove elemento na posicao inicial
+	 */
 	public Object removerInicio() {
 		if (isVazia()) {
 			return null;
@@ -52,6 +68,9 @@ public class DequeEncadeada {
 		return aux.getItem();
 	}
 
+	/*
+	 * adicionar elemento no fim
+	 */
 	public void adicionarFim(Object item) {
 		No novo = new No(item);
 		if (isVazia()) {
@@ -65,6 +84,9 @@ public class DequeEncadeada {
 		pos++;
 	}
 
+	/*
+	 * remove elemento na posicao final
+	 */
 	public Object removerFim() {
 		if (isVazia()) {
 			return null;
@@ -81,34 +103,47 @@ public class DequeEncadeada {
 		pos--;
 		return aux.getItem();
 	}
-	
+
+	/*
+	 * Retorna se o deque esta vazio ou não
+	 */
 	public boolean isVazia() {
 		return inicio == null;
 	}
-	public void estaviaDeque(){
+
+	/*
+	 * esvazia o deque
+	 */
+	public void estaviaDeque() {
 		inicio = null;
 		fim = null;
 	}
 
+	/*
+	 * Gets e sets
+	 */
 	public No getInicio() {
 		return inicio;
 	}
+
 	public void setInicio(No inicio) {
 		this.inicio = inicio;
 	}
+
 	public No getFim() {
 		return fim;
 	}
+
 	public void setFim(No fim) {
 		this.fim = fim;
 	}
+
 	public int getPos() {
 		return pos;
 	}
+
 	public void setPos(int pos) {
 		this.pos = pos;
 	}
-	
-	
 
 }

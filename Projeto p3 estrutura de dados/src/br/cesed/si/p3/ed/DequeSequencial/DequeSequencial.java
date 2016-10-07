@@ -1,12 +1,15 @@
 package br.cesed.si.p3.ed.DequeSequencial;
 
 public class DequeSequencial {
-	
+
 	private static final int TAMANHO = 2;
 	private static final int DOBRO = 2;
 	private Object[] deque = new Object[TAMANHO];
 	private int pos = 0;
-	
+
+	/*
+	 * Quando o deque estiver cheio ele dobra seu tamanho
+	 */
 	public void aumentaDeque(Object[] deque) {
 		Object[] novoArray = new Object[deque.length * DOBRO];
 		for (int i = 0; i < deque.length; i++) {
@@ -15,14 +18,22 @@ public class DequeSequencial {
 		this.deque = novoArray;
 
 	}
-	public boolean EstaVazia(){
-		if(deque.length == 0){
+
+	/*
+	 * Retorna se o deque esta vazio ou não
+	 */
+	public boolean EstaVazia() {
+		if (deque.length == 0) {
 			return true;
 		}
 		return false;
 	}
+
+	/*
+	 * Adiciona elemento no inicio
+	 */
 	public void adicionarInicio(Object item) {
-		if(pos + 1 > deque.length){
+		if (pos + 1 > deque.length) {
 			aumentaDeque(deque);
 		}
 		Object[] novoArray = new Object[deque.length * DOBRO];
@@ -33,33 +44,56 @@ public class DequeSequencial {
 		deque = novoArray;
 		pos++;
 	}
-	public void adicionarFim(Object item){
-		if(pos+1 > deque.length){
+
+	/*
+	 * Adiciona elemento no fim
+	 */
+	public void adicionarFim(Object item) {
+		if (pos + 1 > deque.length) {
 			aumentaDeque(deque);
 		}
 		deque[pos] = item;
 		pos++;
 	}
-	
-	public Object verPrimeiroElemento(){
+	/*
+	 * Ver elemento da posicao inicial
+	 */
+
+	public Object verPrimeiroElemento() {
 		return deque[0];
 	}
-	public Object verUltimoElemento(){
-		return deque[pos-1];
+
+	/*
+	 * Ver ultimo Elemento
+	 */
+	public Object verUltimoElemento() {
+		return deque[pos - 1];
 	}
-	public Object removerInicio(){
+
+	/*
+	 * Remove elemento do inicio
+	 */
+	public Object removerInicio() {
 		Object aux = deque[0];
 		for (int i = 0; i < pos; i++) {
-			deque[i] = deque[i+1];
+			deque[i] = deque[i + 1];
 		}
 		pos--;
 		return aux;
 	}
-	public Object removerFim(){
-		Object aux = deque[pos-1];
+
+	/*
+	 * remove elemento do fim
+	 */
+	public Object removerFim() {
+		Object aux = deque[pos - 1];
 		deque[--pos] = null;
 		return aux;
 	}
+
+	/*
+	 * concatena dois deques
+	 */
 	public void concatenaDeque(DequeSequencial deque2) {
 		int tamanho = deque2.getPos();
 		for (int i = 0; i < tamanho; i++) {
@@ -67,20 +101,31 @@ public class DequeSequencial {
 			adicionarFim(item);
 		}
 	}
+
+	/*
+	 * esvazia deque
+	 */
 	public void esvaziar() {
 		deque = null;
-		
+
 	}
+
+	/*
+	 * Tamanho do deque
+	 */
 	public Object size() {
 		return pos;
 	}
+
+	/*
+	 * Gets e serts
+	 */
 	public int getPos() {
 		return pos;
 	}
+
 	public void setPos(int pos) {
 		this.pos = pos;
 	}
-	
-	
 
 }

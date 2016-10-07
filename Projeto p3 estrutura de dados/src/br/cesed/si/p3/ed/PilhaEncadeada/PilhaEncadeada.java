@@ -6,6 +6,9 @@ public class PilhaEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
 
+	/*
+	 * Adiciona na pilha
+	 */
 	public void push(Object item) {
 		No novo = new No(item);
 		if (isVazia()) {
@@ -19,6 +22,9 @@ public class PilhaEncadeada {
 		pos++;
 	}
 
+	/*
+	 * Remover da pilha e retorna elemento
+	 */
 	public Object pop() {
 		if (isVazia()) {
 			return null;
@@ -35,23 +41,39 @@ public class PilhaEncadeada {
 		pos--;
 		return aux.getItem();
 	}
-	
-	public Object peek(){
+
+	/*
+	 * Ver elemento do topo da pilha
+	 */
+	public Object peek() {
 		return fim.getItem();
 	}
-	public int size(){
+
+	/*
+	 * Tamanho da pilha
+	 */
+	public int size() {
 		return pos;
 	}
 
+	/*
+	 * Ver se esta vazia
+	 */
 	public boolean isVazia() {
 
 		return inicio == null;
 	}
-	
-	public void esvaziaPilha(){
+
+	/*
+	 * Esvaziar pilha
+	 */
+	public void esvaziaPilha() {
 		inicio = null;
 		fim = null;
 	}
+	/*
+	 * Gets e sets
+	 */
 
 	public No getInicio() {
 		return inicio;

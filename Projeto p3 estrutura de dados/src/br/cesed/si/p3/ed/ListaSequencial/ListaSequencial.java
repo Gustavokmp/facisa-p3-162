@@ -6,10 +6,16 @@ public class ListaSequencial {
 	private Object[] lista = new Object[TAMANHO_LISTA];
 	private int pos = 0;
 
+	/*
+	 * Esvaziar lista
+	 */
 	public void vazio() {
 		lista = null;
 	}
 
+	/*
+	 * Dobra tamanho da lista
+	 */
 	public void aumentaLista(Object[] lista) {
 		Object[] novoArray = new Object[lista.length * DOBRO];
 		for (int i = 0; i < lista.length; i++) {
@@ -19,6 +25,9 @@ public class ListaSequencial {
 
 	}
 
+	/*
+	 * Adiciona no fim da lista
+	 */
 	public void adicionarFim(Object adicionar) {
 		if (pos == lista.length) {
 			aumentaLista(lista);
@@ -27,12 +36,18 @@ public class ListaSequencial {
 		pos++;
 	}
 
+	/*
+	 * Ver tamanho da lista
+	 */
 	public int tamanho() {
 		return pos;
 	}
 
+	/*
+	 * Adiciona no inicio
+	 */
 	public void adicionarInicio(Object adicionar) {
-		if(pos + 1 == lista.length){
+		if (pos + 1 == lista.length) {
 			aumentaLista(lista);
 		}
 		Object[] novoArray = new Object[lista.length * DOBRO];
@@ -44,33 +59,44 @@ public class ListaSequencial {
 		pos++;
 	}
 
+	/*
+	 * Ver elemento de dada posicao
+	 */
 	public Object elementoPosicao(int i) {
-		return lista[i-1];
+		return lista[i - 1];
 	}
 
+	/*
+	 * Posicao de deteminado elemento
+	 */
 	public int posElemento(Object elemento) {
 		int posicao = 0;
 		for (int i = 0; i < lista.length; i++) {
-			if(lista[i].equals(elemento)){
+			if (lista[i].equals(elemento)) {
 				posicao = i;
 				break;
 			}
 		}
-		return posicao+1;
+		return posicao + 1;
 	}
 
+	/*
+	 * Adiciona item pela posicao
+	 */
 	public void adicionarPelaPosicao(Object adicionar, int i) {
-		if (pos +1 == lista.length){
+		if (pos + 1 == lista.length) {
 			aumentaLista(lista);
 		}
 		for (int j = i - 1; j < pos; j++) {
-			lista[i+1] = lista[i];
+			lista[i + 1] = lista[i];
 		}
-		lista[i-1] = adicionar;
-		
+		lista[i - 1] = adicionar;
+
 	}
 
-
+	/*
+	 * Concatena duas listas
+	 */
 	public void concatenaLista(ListaSequencial lista2) {
 		int tamanho = lista2.getPos();
 		for (int i = 0; i < tamanho; i++) {
@@ -79,10 +105,11 @@ public class ListaSequencial {
 		}
 
 	}
+
 	public void remove(int posicao) {
 		lista[--posicao] = null;
 		for (int i = posicao; i < pos; i++) {
-			lista[i] = lista[i+1];
+			lista[i] = lista[i + 1];
 		}
 		pos--;
 	}
@@ -90,10 +117,11 @@ public class ListaSequencial {
 	public void remover(Object remova) {
 		int posicao = posElemento(remova);
 		remove(posicao);
-		
+
 	}
-	public Object removerFim(){
-		Object aux = lista[pos-1];
+
+	public Object removerFim() {
+		Object aux = lista[pos - 1];
 		lista[--pos] = null;
 		return aux;
 	}
@@ -113,6 +141,5 @@ public class ListaSequencial {
 	public void setPos(int pos) {
 		this.pos = pos;
 	}
-	
-	
+
 }

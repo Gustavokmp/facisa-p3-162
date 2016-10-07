@@ -5,16 +5,22 @@ import br.cesed.si.p3.ed.No.No;
 public class ListaEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
-	
-	public void concatena(ListaEncadeada lista2){
+
+	/*
+	 * Concatena duas listas encadeadas
+	 */
+	public void concatena(ListaEncadeada lista2) {
 		int tamanho = lista2.getPos();
 		No aux = lista2.getInicio();
-		for (int i = 0; i < tamanho-1; i++) {
+		for (int i = 0; i < tamanho - 1; i++) {
 			adicionarFim(aux.getItem());
 			aux = aux.getProx();
 		}
 	}
 
+	/*
+	 * Retorna posicao atual de um elemento
+	 */
 	public int posicaoAtualItem(Object procure) {
 		No aux = inicio;
 		int posAtual = 0;
@@ -28,6 +34,9 @@ public class ListaEncadeada {
 		return 0;
 	}
 
+	/*
+	 * Retorna a o elemento de dada posicao
+	 */
 	public Object elementoPosicao(int posicao) {
 		No aux = inicio;
 		while (--posicao != 0) {
@@ -36,6 +45,9 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
+	/*
+	 * Adiciona elemento pela posicao
+	 */
 	public void adicionarPosicao(int posicao, Object item) {
 		No aux = inicio;
 		while (--posicao - 1 != 0) {
@@ -48,6 +60,9 @@ public class ListaEncadeada {
 		novo.setAnt(aux);
 	}
 
+	/*
+	 * Remove elemento de dada posicao
+	 */
 	public Object remover(int posicao) {
 		No aux = inicio;
 		while (--posicao != 0) {
@@ -62,11 +77,17 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
-	public Object remover(Object item) {
+	/*
+	 * remove elemento que for passado como parametro
+	 */
+	public Object remover(String item) {
 		int aux = posicaoAtualItem(item);
 		return remover(aux);
 	}
 
+	/*
+	 * Adiciona elemento no inicio
+	 */
 	public void adicionarInicio(Object item) {
 		No novo = new No(item);
 		if (inicio == null) {
@@ -80,6 +101,9 @@ public class ListaEncadeada {
 		pos++;
 	}
 
+	/*
+	 * Remove elemento do inicio
+	 */
 	public Object removerInicio() {
 		if (isVazia()) {
 			return null;
@@ -97,6 +121,9 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
+	/*
+	 * Adiciona no fim
+	 */
 	public void adicionarFim(Object item) {
 		No novo = new No(item);
 		if (isVazia()) {
@@ -110,6 +137,9 @@ public class ListaEncadeada {
 		pos++;
 	}
 
+	/*
+	 * Remove do fim
+	 */
 	public Object removerFim() {
 		if (isVazia()) {
 			return null;
@@ -127,16 +157,25 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
+	/*
+	 * Esvaziar Lista
+	 */
 	public void esvaziarListaEncadeada() {
 		inicio = null;
 		fim = null;
 	}
 
+	/*
+	 * Ver se a lsita esta vazia
+	 */
 	public boolean isVazia() {
 
 		return inicio == null;
 	}
 
+	/*
+	 * Gets e sets
+	 */
 	public No getInicio() {
 		return inicio;
 	}

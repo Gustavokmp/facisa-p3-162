@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import br.cesed.si.p3.ed.PilhaEncadeada.PilhaEncadeada;
 
-
 public class PilhaEncadeadaTeste {
 	PilhaEncadeada pilha = new PilhaEncadeada();
 
@@ -28,16 +27,18 @@ public class PilhaEncadeadaTeste {
 		pilha.push("Exemplo4");
 		Assert.assertEquals("Exemplo4", pilha.peek());
 	}
+
 	@Test
-	public void popTeste(){
+	public void popTeste() {
 		pilha.push("Exemplo1");
 		pilha.push("Exemplo2");
 		pilha.push("Exemplo3");
 		pilha.push("Exemplo4");
 		Assert.assertEquals("Exemplo4", pilha.pop());
 	}
+
 	@Test
-	public void peekTeste(){
+	public void peekTeste() {
 		pilha.push("Exemplo1");
 		pilha.push("Exemplo2");
 		pilha.push("Exemplo3");
@@ -45,8 +46,9 @@ public class PilhaEncadeadaTeste {
 		pilha.push("Exemplo5");
 		Assert.assertEquals("Exemplo5", pilha.peek());
 	}
+
 	@Test
-	public void sizeTeste(){
+	public void sizeTeste() {
 		pilha.push("Exemplo1");
 		pilha.push("Exemplo2");
 		pilha.push("Exemplo3");
@@ -54,9 +56,10 @@ public class PilhaEncadeadaTeste {
 		pilha.push("Exemplo5");
 		Assert.assertEquals(5, pilha.size());
 	}
+
 	@Test
-	public void estaVaziaTeste(){
-		Assert.assertEquals(true,pilha.isVazia());
+	public void estaVaziaTeste() {
+		Assert.assertEquals(true, pilha.isVazia());
 	}
 
 }

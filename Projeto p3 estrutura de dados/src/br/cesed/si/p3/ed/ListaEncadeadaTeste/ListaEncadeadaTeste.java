@@ -25,17 +25,19 @@ public class ListaEncadeadaTeste {
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarInicio("Exemplo3");
 		lista.adicionarInicio("Exemplo4");
-		Assert.assertEquals(1, lista.posicaoAtualItem("Exemplo4"));	
+		Assert.assertEquals(1, lista.posicaoAtualItem("Exemplo4"));
 	}
+
 	@Test
-	public void AdicionarFimTeste(){
+	public void AdicionarFimTeste() {
 		lista.adicionarFim("Exemplo1");
 		lista.adicionarFim("Exemplo2");
 		lista.adicionarFim("Exemplo3");
 		Assert.assertEquals(3, lista.posicaoAtualItem("Exemplo3"));
 	}
+
 	@Test
-	public void adicionarPosicaoTeste(){
+	public void adicionarPosicaoTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
@@ -43,8 +45,9 @@ public class ListaEncadeadaTeste {
 		lista.adicionarPosicao(3, "Exemplo5");
 		Assert.assertEquals(3, lista.posicaoAtualItem("Exemplo5"));
 	}
+
 	@Test
-	public void tamanhoTeste(){
+	public void tamanhoTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
@@ -52,33 +55,36 @@ public class ListaEncadeadaTeste {
 		lista.adicionarPosicao(3, "Exemplo5");
 		Assert.assertEquals(5, lista.getPos());
 	}
+
 	@Test
-	public void removerIndiceTeste(){
+	public void removerIndiceTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
 		lista.adicionarFim("Exemplo4");
 		Assert.assertEquals("Exemplo1", lista.remover(2));
 	}
+
 	@Test
-	public void removerValorTeste(){
+	public void removerValorTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
 		lista.adicionarFim("Exemplo4");
 		Assert.assertEquals("Exemplo1", lista.remover("Exemplo1"));
 	}
-	
+
 	@Test
-	public void elementoValorTeste(){
+	public void elementoValorTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
 		lista.adicionarFim("Exemplo4");
 		Assert.assertEquals("Exemplo3", lista.elementoPosicao(3));
 	}
+
 	@Test
-	public void concatenaTeste(){
+	public void concatenaTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");
@@ -91,8 +97,9 @@ public class ListaEncadeadaTeste {
 		lista.concatena(lista2);
 		Assert.assertEquals("Exemplo6", lista.elementoPosicao(6));
 	}
+
 	@Test
-	public void posDeElementoTeste(){
+	public void posDeElementoTeste() {
 		lista.adicionarInicio("Exemplo1");
 		lista.adicionarInicio("Exemplo2");
 		lista.adicionarFim("Exemplo3");

@@ -24,23 +24,26 @@ public class DequeEncadeadaTeste {
 		deque.adicionarFim("Exemplo");
 		Assert.assertEquals(false, deque.isVazia());
 	}
+
 	@Test
-	public void pegaElementoInicialTeste(){
+	public void pegaElementoInicialTeste() {
 		deque.adicionarFim("Exemplo1");
 		deque.adicionarFim("Exemplo2");
 		deque.adicionarFim("Exemplo3");
 		deque.adicionarInicio("Exemplo4");
 		Assert.assertEquals("Exemplo4", deque.getElementoInicial());
 	}
+
 	@Test
-	public void pegaElementoFinalTeste(){
+	public void pegaElementoFinalTeste() {
 		deque.adicionarFim("Exemplo1");
 		deque.adicionarFim("Exemplo2");
 		deque.adicionarFim("Exemplo3");
 		Assert.assertEquals("Exemplo3", deque.getElementoFinal());
 	}
+
 	@Test
-	public void adicionarInicioTeste(){
+	public void adicionarInicioTeste() {
 		deque.adicionarInicio("Exemplo1");
 		deque.adicionarInicio("Exemplo2");
 		deque.adicionarInicio("Exemplo3");
@@ -48,8 +51,9 @@ public class DequeEncadeadaTeste {
 		deque.adicionarInicio("Exemplo5");
 		Assert.assertEquals("Exemplo5", deque.getElementoInicial());
 	}
+
 	@Test
-	public void adicionarFimTeste(){
+	public void adicionarFimTeste() {
 		deque.adicionarFim("Exemplo1");
 		deque.adicionarFim("Exemplo2");
 		deque.adicionarFim("Exemplo3");
@@ -57,8 +61,9 @@ public class DequeEncadeadaTeste {
 		deque.adicionarFim("Exemplo5");
 		Assert.assertEquals("Exemplo5", deque.getElementoFinal());
 	}
+
 	@Test
-	public void removerInicioTeste(){
+	public void removerInicioTeste() {
 		deque.adicionarInicio("Exemplo1");
 		deque.adicionarInicio("Exemplo2");
 		deque.adicionarInicio("Exemplo3");
@@ -66,8 +71,9 @@ public class DequeEncadeadaTeste {
 		deque.adicionarInicio("Exemplo5");
 		Assert.assertEquals("Exemplo5", deque.removerInicio());
 	}
+
 	@Test
-	public void removerFimTeste(){
+	public void removerFimTeste() {
 		deque.adicionarFim("Exemplo1");
 		deque.adicionarFim("Exemplo2");
 		deque.adicionarFim("Exemplo3");
@@ -75,8 +81,9 @@ public class DequeEncadeadaTeste {
 		deque.adicionarFim("Exemplo5");
 		Assert.assertEquals("Exemplo5", deque.removerFim());
 	}
+
 	@Test
-	public void concatenaTeste(){
+	public void concatenaTeste() {
 		DequeEncadeada deque2 = new DequeEncadeada();
 		deque.adicionarInicio("Exemplo1");
 		deque.adicionarInicio("Exemplo2");
@@ -88,8 +95,8 @@ public class DequeEncadeadaTeste {
 		deque2.adicionarFim("Exemplo8");
 		deque2.adicionarFim("Exemplo9");
 		deque.concatena(deque2);
-		Assert.assertEquals("Exemplo9",deque.getElementoFinal());
-		
+		Assert.assertEquals("Exemplo9", deque.getElementoFinal());
+
 	}
 
 }

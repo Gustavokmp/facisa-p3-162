@@ -1,9 +1,9 @@
 package br.cesed.si.p3.ed.No;
 
 public class No {
-	private No prox,ant;
+	private No prox, ant;
 	private Object item;
-	
+
 	public No(Object item) {
 		this.item = item;
 		prox = null;
@@ -22,7 +22,6 @@ public class No {
 		return ant;
 	}
 
-
 	public void setAnt(No ant) {
 		this.ant = ant;
 	}
@@ -34,7 +33,5 @@ public class No {
 	public void setItem(Object item) {
 		this.item = item;
 	}
-	
-	
 
 }

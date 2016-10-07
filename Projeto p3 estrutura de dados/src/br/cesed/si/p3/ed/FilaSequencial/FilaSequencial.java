@@ -6,6 +6,9 @@ public class FilaSequencial {
 	private Object[] fila = new Object[TAMANHO];
 	int pos = 0;
 
+	/*
+	 * Dobra o tamanho da fila
+	 */
 	public void aumentaFila(Object[] fila) {
 		Object[] novoArray = new Object[fila.length * DOBRO];
 		for (int i = 0; i < fila.length; i++) {
@@ -14,6 +17,9 @@ public class FilaSequencial {
 		this.fila = novoArray;
 	}
 
+	/*
+	 * Adiciona na fila
+	 */
 	public void Adicionar(Object item) {
 		if (pos + 1 > fila.length) {
 			aumentaFila(fila);
@@ -22,6 +28,9 @@ public class FilaSequencial {
 		pos++;
 	}
 
+	/*
+	 * Ver se a fila esta vazia
+	 */
 	public boolean isVazia() {
 		if (pos == 0) {
 			return true;
@@ -29,26 +38,37 @@ public class FilaSequencial {
 		return false;
 	}
 
+	/*
+	 * Ver primeiro elemento da fila
+	 */
 	public Object primeiroDaFila() {
 		return fila[0];
 	}
 
+	/*
+	 * Remover da fila
+	 */
 	public Object remove() {
 		Object aux = fila[0];
-		for (int i = 0; i < fila.length -1; i++) {
-			fila[i] = fila[i+1];
+		for (int i = 0; i < fila.length - 1; i++) {
+			fila[i] = fila[i + 1];
 		}
 		return aux;
 	}
 
+	/*
+	 * Esvaziar fila
+	 */
 	public void esvaziarFila() {
 		fila = null;
 
 	}
 
+	/*
+	 * get
+	 */
 	public int getPos() {
 		return pos;
 	}
-	
 
 }

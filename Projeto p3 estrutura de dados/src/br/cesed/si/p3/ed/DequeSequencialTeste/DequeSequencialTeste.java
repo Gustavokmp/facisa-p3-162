@@ -7,9 +7,8 @@ import org.junit.Test;
 
 import br.cesed.si.p3.ed.DequeSequencial.DequeSequencial;
 
-
 public class DequeSequencialTeste {
-	
+
 	DequeSequencial deque = new DequeSequencial();
 
 	@Before
@@ -28,6 +27,7 @@ public class DequeSequencialTeste {
 		deque.adicionarInicio("Exemplo3");
 		Assert.assertEquals("Exemplo3", deque.verPrimeiroElemento());
 	}
+
 	@Test
 	public void adicionarFimTeste() {
 		deque.adicionarFim("Exemplo1");
@@ -35,6 +35,7 @@ public class DequeSequencialTeste {
 		deque.adicionarFim("Exemplo3");
 		Assert.assertEquals("Exemplo3", deque.verUltimoElemento());
 	}
+
 	@Test
 	public void adicionarVariadoTeste() {
 		deque.adicionarInicio("Exemplo1");
@@ -44,6 +45,7 @@ public class DequeSequencialTeste {
 		Assert.assertEquals("Exemplo3", deque.verUltimoElemento());
 		Assert.assertEquals("Exemplo4", deque.verPrimeiroElemento());
 	}
+
 	@Test
 	public void removerInicioTeste() {
 		deque.adicionarInicio("Exemplo1");
@@ -52,6 +54,7 @@ public class DequeSequencialTeste {
 		deque.adicionarInicio("Exemplo4");
 		Assert.assertEquals("Exemplo4", deque.removerInicio());
 	}
+
 	@Test
 	public void removerFimTeste() {
 		deque.adicionarInicio("Exemplo1");
@@ -60,6 +63,7 @@ public class DequeSequencialTeste {
 		deque.adicionarInicio("Exemplo4");
 		Assert.assertEquals("Exemplo3", deque.removerFim());
 	}
+
 	@Test
 	public void tamanhoTeste() {
 		deque.adicionarInicio("Exemplo1");
@@ -68,6 +72,7 @@ public class DequeSequencialTeste {
 		deque.adicionarInicio("Exemplo4");
 		Assert.assertEquals(4, deque.size());
 	}
+
 	@Test
 	public void concatenaDoisDequesTeste() {
 		deque.adicionarInicio("Exemplo1");

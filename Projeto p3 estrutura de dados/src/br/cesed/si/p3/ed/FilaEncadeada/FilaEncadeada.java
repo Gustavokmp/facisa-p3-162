@@ -6,7 +6,7 @@ public class FilaEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
 
-	/*
+	/**
 	 * Adiciona na fila
 	 */
 	public void push(Object item) {
@@ -22,8 +22,9 @@ public class FilaEncadeada {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Remove da fila
+	 * 
 	 */
 	public Object pop() {
 		if (isVazia()) {
@@ -42,21 +43,21 @@ public class FilaEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * Ver elemento do topo da fila
 	 */
 	public Object peek() {
 		return inicio.getItem();
 	}
 
-	/*
+	/**
 	 * ver se a fila esta vazia ou não
 	 */
 	public boolean isVazia() {
 		return inicio == null;
 	}
 
-	/*
+	/**
 	 * esvazia a fila
 	 */
 	public void estavaziaFila() {
@@ -64,9 +65,6 @@ public class FilaEncadeada {
 		fim = null;
 	}
 
-	/*
-	 * Gets e sets
-	 */
 	public No getInicio() {
 		return inicio;
 	}

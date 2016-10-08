@@ -6,7 +6,7 @@ public class PilhaSequencial {
 	private Object[] pilha = new Object[TAMANHO];
 	int pos = 0;
 
-	/*
+	/**
 	 * Dobra tamanho da pilha
 	 */
 	public void aumentaPilha(Object[] pilha) {
@@ -17,7 +17,7 @@ public class PilhaSequencial {
 		this.pilha = novoArray;
 
 	}
-	/*
+	/**
 	 * Esvaziar pilha
 	 */
 
@@ -25,7 +25,7 @@ public class PilhaSequencial {
 		pilha = null;
 	}
 
-	/*
+	/**
 	 * Adicionar
 	 */
 	public void push(Object item) {
@@ -36,7 +36,7 @@ public class PilhaSequencial {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Remover e retorna elemento
 	 */
 	public Object pop() {
@@ -46,21 +46,21 @@ public class PilhaSequencial {
 		return aux;
 	}
 
-	/*
+	/**
 	 * Tamanho da pilha
 	 */
 	public Object size() {
 		return pos;
 	}
 
-	/*
+	/**
 	 * Ver elemento do topo da pilha
 	 */
 	public Object peek() {
 		return pilha[pos - 1];
 	}
 
-	/*
+	/**
 	 * Ver se a pilha esta vazia
 	 */
 	public boolean isVazia() {
@@ -70,9 +70,6 @@ public class PilhaSequencial {
 		return false;
 	}
 
-	/*
-	 * Gets e sets
-	 */
 	public int getPos() {
 		return pos;
 	}

@@ -2,13 +2,13 @@ package br.cesed.si.p3.ed.DequeEncadeada;
 
 import br.cesed.si.p3.ed.No.No;
 
-/*
- * Concatena dois deques
- */
 public class DequeEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
 
+/**
+ * Concatena dois deques
+ */
 	public void concatena(DequeEncadeada deque2) {
 		int tamanho = deque2.getPos();
 		No aux = deque2.getInicio();
@@ -18,21 +18,21 @@ public class DequeEncadeada {
 		}
 	}
 
-	/*
+	/**
 	 * Pega o elemento inicial do deque
 	 */
 	public Object getElementoInicial() {
 		return inicio.getItem();
 	}
 
-	/*
+	/**
 	 * Pega o ultimo elemento do deque
 	 */
 	public Object getElementoFinal() {
 		return fim.getItem();
 	}
 
-	/*
+	/**
 	 * Adiciona elemento no inicio
 	 */
 	public void adicionarInicio(Object item) {
@@ -48,7 +48,7 @@ public class DequeEncadeada {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Remove elemento na posicao inicial
 	 */
 	public Object removerInicio() {
@@ -68,7 +68,7 @@ public class DequeEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * adicionar elemento no fim
 	 */
 	public void adicionarFim(Object item) {
@@ -84,8 +84,8 @@ public class DequeEncadeada {
 		pos++;
 	}
 
-	/*
-	 * remove elemento na posicao final
+	/**
+	 * remove elemento na posicao final e o retorna
 	 */
 	public Object removerFim() {
 		if (isVazia()) {
@@ -104,14 +104,14 @@ public class DequeEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * Retorna se o deque esta vazio ou não
 	 */
 	public boolean isVazia() {
 		return inicio == null;
 	}
 
-	/*
+	/**
 	 * esvazia o deque
 	 */
 	public void estaviaDeque() {
@@ -119,9 +119,6 @@ public class DequeEncadeada {
 		fim = null;
 	}
 
-	/*
-	 * Gets e sets
-	 */
 	public No getInicio() {
 		return inicio;
 	}

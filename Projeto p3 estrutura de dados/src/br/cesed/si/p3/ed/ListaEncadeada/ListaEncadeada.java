@@ -6,7 +6,7 @@ public class ListaEncadeada {
 	private No inicio = null, fim = null;
 	private int pos = 0;
 
-	/*
+	/**
 	 * Concatena duas listas encadeadas
 	 */
 	public void concatena(ListaEncadeada lista2) {
@@ -18,7 +18,7 @@ public class ListaEncadeada {
 		}
 	}
 
-	/*
+	/**
 	 * Retorna posicao atual de um elemento
 	 */
 	public int posicaoAtualItem(Object procure) {
@@ -34,7 +34,7 @@ public class ListaEncadeada {
 		return 0;
 	}
 
-	/*
+	/**
 	 * Retorna a o elemento de dada posicao
 	 */
 	public Object elementoPosicao(int posicao) {
@@ -45,7 +45,7 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * Adiciona elemento pela posicao
 	 */
 	public void adicionarPosicao(int posicao, Object item) {
@@ -60,7 +60,7 @@ public class ListaEncadeada {
 		novo.setAnt(aux);
 	}
 
-	/*
+	/**
 	 * Remove elemento de dada posicao
 	 */
 	public Object remover(int posicao) {
@@ -77,7 +77,7 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * remove elemento que for passado como parametro
 	 */
 	public Object remover(String item) {
@@ -85,7 +85,7 @@ public class ListaEncadeada {
 		return remover(aux);
 	}
 
-	/*
+	/**
 	 * Adiciona elemento no inicio
 	 */
 	public void adicionarInicio(Object item) {
@@ -101,7 +101,7 @@ public class ListaEncadeada {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Remove elemento do inicio
 	 */
 	public Object removerInicio() {
@@ -121,7 +121,7 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * Adiciona no fim
 	 */
 	public void adicionarFim(Object item) {
@@ -137,7 +137,7 @@ public class ListaEncadeada {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Remove do fim
 	 */
 	public Object removerFim() {
@@ -157,7 +157,7 @@ public class ListaEncadeada {
 		return aux.getItem();
 	}
 
-	/*
+	/**
 	 * Esvaziar Lista
 	 */
 	public void esvaziarListaEncadeada() {
@@ -165,7 +165,7 @@ public class ListaEncadeada {
 		fim = null;
 	}
 
-	/*
+	/**
 	 * Ver se a lsita esta vazia
 	 */
 	public boolean isVazia() {
@@ -173,9 +173,6 @@ public class ListaEncadeada {
 		return inicio == null;
 	}
 
-	/*
-	 * Gets e sets
-	 */
 	public No getInicio() {
 		return inicio;
 	}

@@ -7,8 +7,9 @@ public class DequeSequencial {
 	private Object[] deque = new Object[TAMANHO];
 	private int pos = 0;
 
-	/*
+	/**
 	 * Quando o deque estiver cheio ele dobra seu tamanho
+	 * 
 	 */
 	public void aumentaDeque(Object[] deque) {
 		Object[] novoArray = new Object[deque.length * DOBRO];
@@ -19,7 +20,7 @@ public class DequeSequencial {
 
 	}
 
-	/*
+	/**
 	 * Retorna se o deque esta vazio ou não
 	 */
 	public boolean EstaVazia() {
@@ -29,7 +30,7 @@ public class DequeSequencial {
 		return false;
 	}
 
-	/*
+	/**
 	 * Adiciona elemento no inicio
 	 */
 	public void adicionarInicio(Object item) {
@@ -45,7 +46,7 @@ public class DequeSequencial {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Adiciona elemento no fim
 	 */
 	public void adicionarFim(Object item) {
@@ -55,7 +56,7 @@ public class DequeSequencial {
 		deque[pos] = item;
 		pos++;
 	}
-	/*
+	/**
 	 * Ver elemento da posicao inicial
 	 */
 
@@ -63,14 +64,14 @@ public class DequeSequencial {
 		return deque[0];
 	}
 
-	/*
+	/**
 	 * Ver ultimo Elemento
 	 */
 	public Object verUltimoElemento() {
 		return deque[pos - 1];
 	}
 
-	/*
+	/**
 	 * Remove elemento do inicio
 	 */
 	public Object removerInicio() {
@@ -82,7 +83,7 @@ public class DequeSequencial {
 		return aux;
 	}
 
-	/*
+	/**
 	 * remove elemento do fim
 	 */
 	public Object removerFim() {
@@ -91,7 +92,7 @@ public class DequeSequencial {
 		return aux;
 	}
 
-	/*
+	/**
 	 * concatena dois deques
 	 */
 	public void concatenaDeque(DequeSequencial deque2) {
@@ -102,7 +103,7 @@ public class DequeSequencial {
 		}
 	}
 
-	/*
+	/**
 	 * esvazia deque
 	 */
 	public void esvaziar() {
@@ -110,16 +111,12 @@ public class DequeSequencial {
 
 	}
 
-	/*
+	/**
 	 * Tamanho do deque
 	 */
 	public Object size() {
 		return pos;
 	}
-
-	/*
-	 * Gets e serts
-	 */
 	public int getPos() {
 		return pos;
 	}

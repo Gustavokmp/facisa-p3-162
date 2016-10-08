@@ -6,14 +6,14 @@ public class ListaSequencial {
 	private Object[] lista = new Object[TAMANHO_LISTA];
 	private int pos = 0;
 
-	/*
+	/**
 	 * Esvaziar lista
 	 */
 	public void vazio() {
 		lista = null;
 	}
 
-	/*
+	/**
 	 * Dobra tamanho da lista
 	 */
 	public void aumentaLista(Object[] lista) {
@@ -25,7 +25,7 @@ public class ListaSequencial {
 
 	}
 
-	/*
+	/**
 	 * Adiciona no fim da lista
 	 */
 	public void adicionarFim(Object adicionar) {
@@ -36,14 +36,14 @@ public class ListaSequencial {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Ver tamanho da lista
 	 */
 	public int tamanho() {
 		return pos;
 	}
 
-	/*
+	/**
 	 * Adiciona no inicio
 	 */
 	public void adicionarInicio(Object adicionar) {
@@ -59,14 +59,14 @@ public class ListaSequencial {
 		pos++;
 	}
 
-	/*
+	/**
 	 * Ver elemento de dada posicao
 	 */
 	public Object elementoPosicao(int i) {
 		return lista[i - 1];
 	}
 
-	/*
+	/**
 	 * Posicao de deteminado elemento
 	 */
 	public int posElemento(Object elemento) {
@@ -80,7 +80,7 @@ public class ListaSequencial {
 		return posicao + 1;
 	}
 
-	/*
+	/**
 	 * Adiciona item pela posicao
 	 */
 	public void adicionarPelaPosicao(Object adicionar, int i) {
@@ -94,7 +94,7 @@ public class ListaSequencial {
 
 	}
 
-	/*
+	/**
 	 * Concatena duas listas
 	 */
 	public void concatenaLista(ListaSequencial lista2) {
@@ -105,7 +105,9 @@ public class ListaSequencial {
 		}
 
 	}
-
+	/**
+	 * Remover pela posicao
+	 */
 	public void remove(int posicao) {
 		lista[--posicao] = null;
 		for (int i = posicao; i < pos; i++) {
@@ -113,13 +115,19 @@ public class ListaSequencial {
 		}
 		pos--;
 	}
+	/**
+	 * 
+	 * remover pelo nome
+	 */
 
-	public void remover(Object remova) {
+	public void remover(String remova) {
 		int posicao = posElemento(remova);
 		remove(posicao);
 
 	}
-
+	/**
+	 * Remove elemento do fim
+	 */
 	public Object removerFim() {
 		Object aux = lista[pos - 1];
 		lista[--pos] = null;

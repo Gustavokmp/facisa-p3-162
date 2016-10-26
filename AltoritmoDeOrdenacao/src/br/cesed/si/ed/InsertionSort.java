@@ -17,13 +17,13 @@ public class InsertionSort {
 	}
 	
 	public int[] insetionSortDecrecente(int[] array){
-	      int tmp, tamanho = array.length;
+	      int aux, tamanho = array.length;
 	      for (int i = 1; i < tamanho; i++) {
 	            int j = i;
 	            while (j > 0 && array[j - 1] < array[j]) {
-	                  tmp = array[j];
+	                  aux = array[j];
 	                  array[j] = array[j - 1];
-	                  array[j - 1] = tmp;
+	                  array[j - 1] = aux;
 	                  j--;
 	            }
 	      }
